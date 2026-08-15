@@ -4,21 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#9b6879">
-<meta name="description" content="Lovely Girl — catálogo online de maquillaje y belleza. Compra fácil por WhatsApp.">
+<meta name="description" content="Catálogo online profesional. Compra fácil por WhatsApp.">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<title>Lovely Girl | Catálogo de belleza</title>
+<title>Catálogo Online</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="hero">
-  <div class="brand"><div class="logo"><img src="logo.svg" alt="Lovely Girl"></div><div><p class="eyebrow">BELLEZA · ESTILO · CUIDADO</p><h1>Lovely Girl</h1><p>Tu belleza, tu estilo, tu esencia.</p></div></div>
+  <div class="brand"><div class="logo"><img src="logo.svg" alt="Logo del negocio"></div><div><p class="eyebrow">BELLEZA · ESTILO · CUIDADO</p><h1>Catálogo Online</h1><p>Tu tienda, tus productos, tu estilo.</p></div></div>
   <div class="hero-actions"><a class="whatsapp-main" id="mainWhatsapp" href="#" target="_blank" rel="noopener">💬 WhatsApp</a><button class="cart-button" id="openCart" type="button" aria-label="Abrir carrito">🛒 <span>Carrito</span><b id="cartCount">0</b></button></div>
 </header>
 <main>
-  <section class="welcome"><span>✨ CATÁLOGO ONLINE</span><h2>Belleza que te hace sentir increíble</h2><p>Encuentra tus favoritos, guárdalos, agrégalos al carrito y envíanos tu pedido por WhatsApp.</p></section>
+  <section class="welcome"><span>✨ CATÁLOGO ONLINE</span><h2>Todo lo que buscas, en un solo lugar</h2><p>Encuentra tus favoritos, guárdalos, agrégalos al carrito y envía tu pedido por WhatsApp.</p></section>
   <section class="toolbar" aria-label="Buscar y filtrar productos">
     <div class="search-wrap"><span>🔎</span><input id="search" type="search" autocomplete="off" placeholder="Buscar producto, marca o categoría..." aria-label="Buscar producto"></div>
     <div id="categories" class="categories"></div>
@@ -28,18 +28,18 @@
   <section id="products" class="products" aria-live="polite"></section>
   <div id="empty" class="empty" hidden><div>🔎</div><h3>No encontramos productos</h3><p>Prueba otra búsqueda o limpia los filtros.</p><button id="clearFilters" type="button">Ver todos los productos</button></div>
 </main>
-<section class="qr-card"><div><span class="qr-kicker">COMPARTE LOVELY GIRL</span><h2>Tu belleza siempre a un escaneo</h2><p>Escanea el QR para abrir el catálogo desde cualquier teléfono.</p><button id="shareCatalog" class="secondary-button" type="button">↗ Compartir catálogo</button></div><div id="qrcode" aria-label="Código QR del catálogo"></div></section>
+<section class="qr-card"><div><span class="qr-kicker">COMPARTE TU CATÁLOGO</span><h2>Tu tienda siempre a un escaneo</h2><p>Escanea el QR para abrir el catálogo desde cualquier teléfono.</p><button id="shareCatalog" class="secondary-button" type="button">↗ Compartir catálogo</button></div><div id="qrcode" aria-label="Código QR del catálogo"></div></section>
 <div class="cart-overlay" id="cartOverlay" hidden></div>
 <aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras" aria-hidden="true">
   <div class="cart-header"><div><span class="cart-kicker">TU COMPRA</span><h2>🛒 Mi carrito</h2></div><button id="closeCart" class="icon-button" type="button" aria-label="Cerrar carrito">✕</button></div>
   <div id="cartItems" class="cart-items"></div><div class="cart-empty" id="cartEmpty">Tu carrito está vacío.<br><span>Agrega productos para comenzar tu pedido.</span></div>
-  <div class="cart-summary"><div class="summary-row"><span>Productos</span><strong id="summaryUnits">0</strong></div><div class="summary-row"><span>Subtotal</span><strong id="cartTotal">$0.00</strong></div><p id="consultNotice" class="consult-notice" hidden>Hay productos cuyo precio debe confirmarse.</p><button id="checkout" class="checkout" type="button">📲 Continuar con el pedido</button><button id="clearCart" class="clear-cart" type="button">Vaciar carrito</button></div>
+  <div class="cart-summary"><div class="summary-row"><span>Productos</span><strong id="summaryUnits">0</strong></div><div class="summary-row"><span>Subtotal</span><strong id="cartTotal">$0.00</strong></div><button id="checkout" class="checkout" type="button">📲 Continuar con el pedido</button><button id="clearCart" class="clear-cart" type="button">Vaciar carrito</button></div>
 </aside>
 <div class="modal-backdrop" id="modalBackdrop" hidden></div>
 <section class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle" hidden><button class="modal-close" data-close-modal aria-label="Cerrar">✕</button><div id="productModalBody"></div></section>
 <section class="modal checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" hidden><button class="modal-close" data-close-modal aria-label="Cerrar">✕</button><div class="modal-head"><span>ÚLTIMO PASO</span><h2 id="checkoutTitle">Completa tu pedido</h2><p>Revisaremos estos datos junto con tu carrito por WhatsApp.</p></div><form id="checkoutForm"><div class="form-grid"><label>Nombre completo<input name="name" required autocomplete="name" placeholder="Tu nombre"></label><label>Teléfono<input name="phone" autocomplete="tel" inputmode="tel" placeholder="Tu teléfono"></label><label>Ciudad / zona<input name="city" required autocomplete="address-level2" placeholder="Ciudad o zona"></label><label>Entrega<select name="delivery" required><option value="Retiro / coordinar">Retiro / coordinar</option><option value="Delivery">Delivery</option><option value="Envío">Envío</option></select></label><label>Método de pago<select name="payment"><option>Por confirmar</option><option>Transferencia</option><option>Efectivo</option><option>Pago móvil</option><option>Otro</option></select></label><label class="full">Dirección / referencia<textarea name="address" rows="2" placeholder="Dirección, punto de referencia o instrucciones"></textarea></label><label class="full">Nota del pedido<textarea name="note" rows="2" placeholder="Ej.: necesito tonos específicos..."></textarea></label></div><div class="order-preview" id="orderPreview"></div><button class="checkout" type="submit">💬 Enviar pedido por WhatsApp</button></form></section>
-<section class="modal" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoTitle" hidden><button class="modal-close" data-close-modal aria-label="Cerrar">✕</button><div class="modal-head"><span>LOVELY GIRL</span><h2 id="infoTitle">Información</h2></div><div id="infoBody"></div></section>
-<footer><div class="footer-logo">Lovely Girl</div><p>Maquillaje · belleza · cuidado personal</p><div class="footer-links"><a id="footerWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a><button id="aboutBtn" type="button">Cómo comprar</button><button id="privacyBtn" type="button">Privacidad</button></div><small>Catálogo online · Todos los precios en USD</small></footer>
+<section class="modal" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoTitle" hidden><button class="modal-close" data-close-modal aria-label="Cerrar">✕</button><div class="modal-head"><span>CATÁLOGO ONLINE</span><h2 id="infoTitle">Información</h2></div><div id="infoBody"></div></section>
+<footer><div class="footer-logo">Catálogo Online</div><p>Productos · belleza · estilo · cuidado personal</p><div class="footer-links"><a id="footerWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a><button id="aboutBtn" type="button">Cómo comprar</button><button id="privacyBtn" type="button">Privacidad</button></div><small>Catálogo online · Configurable por cliente</small></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><script src="app.js"></script>
 </body>
 </html>
