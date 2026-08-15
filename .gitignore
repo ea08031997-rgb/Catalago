@@ -1,0 +1,17 @@
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+
+# Local secrets/config overrides
+.env
+.env.*
+!.env.example
+secrets/
+private/
+
+# Temporary exports
+*.zip
+*.bak
