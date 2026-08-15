@@ -1,0 +1,14 @@
+{
+  "name": "Lovely Girl | Catálogo de belleza",
+  "short_name": "Lovely Girl",
+  "description": "Catálogo online de maquillaje y belleza.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fffaf8",
+  "theme_color": "#9b6879",
+  "lang": "es",
+  "icons": [
+    {"src":"logo.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
