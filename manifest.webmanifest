@@ -1,7 +1,7 @@
 {
-  "name": "Lovely Girl | Catálogo de belleza",
-  "short_name": "Lovely Girl",
-  "description": "Catálogo online de maquillaje y belleza.",
+  "name": "Catálogo Online",
+  "short_name": "Catálogo",
+  "description": "Catálogo online profesional configurable por cliente.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
