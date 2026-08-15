@@ -11,21 +11,36 @@
   <header class="hero">
     <div class="brand">
       <div class="logo"><img src="logo.svg" alt="Logo de Lovely Girl"></div>
-      <div>
-        <p class="eyebrow">BELLEZA · ESTILO · CUIDADO</p>
-        <h1>Lovely Girl</h1>
-        <p>Tu belleza, tu estilo, tu esencia.</p>
-      </div>
+      <div><p class="eyebrow">BELLEZA · ESTILO · CUIDADO</p><h1>Lovely Girl</h1><p>Tu belleza, tu estilo, tu esencia.</p></div>
     </div>
-    <a class="whatsapp-main" id="mainWhatsapp" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+    <div class="hero-actions">
+      <button class="cart-button" id="openCart" type="button" aria-label="Abrir carrito">🛒 <span>Carrito</span><b id="cartCount">0</b></button>
+      <a class="whatsapp-main" id="mainWhatsapp" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
   </header>
   <main>
-    <section class="welcome"><span>✨ Descubre tus favoritos</span><h2>Belleza que te hace sentir increíble</h2><p>Explora nuestra selección de productos y compra directamente por WhatsApp.</p></section>
+    <section class="welcome"><span>✨ Descubre tus favoritos</span><h2>Belleza que te hace sentir increíble</h2><p>Explora nuestra selección de productos y agrega tus favoritos al carrito.</p></section>
     <section class="toolbar"><input id="search" type="search" placeholder="🔎 Buscar producto..." aria-label="Buscar producto"><div id="categories" class="categories"></div></section>
     <section id="products" class="products" aria-live="polite"></section>
     <p id="empty" class="empty" hidden>No encontramos productos.</p>
   </main>
+
   <aside class="qr-card"><div><span class="qr-kicker">COMPARTE LOVELY GIRL</span><h2>Tu belleza siempre a un escaneo</h2><p>Escanea el código QR para abrir nuestro catálogo desde cualquier teléfono.</p></div><div id="qrcode" aria-label="Código QR del catálogo"></div></aside>
+
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="cart-header"><div><span class="cart-kicker">TU COMPRA</span><h2>🛒 Mi carrito</h2></div><button id="closeCart" class="icon-button" type="button" aria-label="Cerrar carrito">✕</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-empty" id="cartEmpty">Tu carrito está vacío.<br><span>Agrega productos para comenzar tu pedido.</span></div>
+    <div class="cart-summary">
+      <div class="summary-row"><span>Productos</span><strong id="summaryUnits">0</strong></div>
+      <div class="summary-row"><span>Subtotal</span><strong id="cartTotal">$0.00</strong></div>
+      <p id="consultNotice" class="consult-notice" hidden>Hay productos con precio por consultar.</p>
+      <button id="checkout" class="checkout" type="button">📲 Finalizar pedido por WhatsApp</button>
+      <button id="clearCart" class="clear-cart" type="button">Vaciar carrito</button>
+    </div>
+  </aside>
+
   <footer><div class="footer-logo">Lovely Girl</div><p>Gracias por elegirnos 💕</p><a id="footerWhatsapp" href="#" target="_blank" rel="noopener">Contactar por WhatsApp</a></footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><script src="app.js"></script>
 </body>
