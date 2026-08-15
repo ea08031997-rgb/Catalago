@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo digital de productos con WhatsApp y código QR.">
+  <title>Catálogo Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="brand">
+      <div class="logo" id="logo">C</div>
+      <div>
+        <h1 id="businessName">Mi Catálogo</h1>
+        <p>Productos seleccionados para ti</p>
+      </div>
+    </div>
+    <a class="whatsapp-main" id="mainWhatsapp" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+  </header>
+
+  <main>
+    <section class="toolbar">
+      <input id="search" type="search" placeholder="Buscar producto..." aria-label="Buscar producto">
+      <div id="categories" class="categories"></div>
+    </section>
+
+    <section id="products" class="products" aria-live="polite"></section>
+    <p id="empty" class="empty" hidden>No encontramos productos.</p>
+  </main>
+
+  <aside class="qr-card">
+    <div>
+      <h2>Comparte este catálogo</h2>
+      <p>Escanea el QR para abrirlo desde cualquier teléfono.</p>
+    </div>
+    <div id="qrcode" aria-label="Código QR del catálogo"></div>
+  </aside>
+
+  <footer>
+    <p id="footerName">Mi Catálogo</p>
+    <a id="footerWhatsapp" href="#" target="_blank" rel="noopener">Contactar por WhatsApp</a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
